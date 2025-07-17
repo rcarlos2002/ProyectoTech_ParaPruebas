@@ -266,7 +266,7 @@ a.btn-primary {
 
 a.btn-primary:hover {
     background-color: white;
-    color: #2192E0;
+    color: #2192E0 !important;
 }
 
 #hero h1 {

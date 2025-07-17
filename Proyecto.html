@@ -196,5 +196,37 @@
         <footer></footer>
     </div>
 </body>
-
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+<script type="module">
+	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+	createChat({
+		webhookUrl: 'https://santib12.app.n8n.cloud/webhook/a4166090-59c4-4da3-a968-287b6ae798e1/chat',
+		webhookConfig: {
+			method: 'POST',
+			headers: {}
+		},
+		target: '#n8n-chat',
+		mode: 'window',
+		chatInputKey: 'chatInput',
+		chatSessionKey: 'sessionId',
+		loadPreviousSession: true,
+		metadata: {},
+		showWelcomeScreen: false,
+		defaultLanguage: 'es',
+		initialMessages: [
+			'Hola! 👋',
+			'Soy  𝑪𝒉𝒂𝒕𝑼𝑵𝑰2. Dime tu nombre y en que te puedo ayudar hoy?'
+		],
+		i18n: {
+			es: {
+				title: '𝑷𝒓𝒐𝒈𝒓𝒂𝒎𝒂𝒄𝒊𝒐𝒏 𝑼𝑵𝑰2 en linea 24/7',
+				subtitle: "Bienvenid@ a  𝑪𝒉𝒂𝒕𝑼𝑵𝑰2 ", 
+				footer: '',
+				getStarted: 'Nueva conversacion',
+				inputPlaceholder: 'Mensaje.',
+			},
+		},
+	});
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </html>
