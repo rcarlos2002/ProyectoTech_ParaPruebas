@@ -322,13 +322,22 @@ a.btn-second.blanco:hover{
 
 .slide h2{
     font-weight: bold;
-    text-shadow: 0 0 black;
+    text-shadow: 2px 2px 8px #000;
+}
+
+.slide p{
+    text-shadow: 2px 2px 5px #000;
 }
 
 .carousel-caption {
     bottom: 8.25rem;
 }
 
+.carousel-item img{
+    max-width: 100%;
+    height: 468px;
+    object-fit: cover;
+}
 .parrafo{
     font-size: 15px;
 }

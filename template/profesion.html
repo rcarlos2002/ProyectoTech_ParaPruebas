@@ -6,50 +6,17 @@
     <title>Profesionales</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../css/Profesiones.css">
+    <link rel="stylesheet" href="../css/Proyecto.css">
     <script src="https://kit.fontawesome.com/058b4c6e59.js" crossorigin="anonymous"></script>
     <style>
-        .container-profesionales {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            /* 3 tarjetas por fila */
-            gap: 30px;
-            padding: 20px;
-        }
-
-        .caja .card-title {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: #060607;
-            text-align: center;
-            margin-top: 10px;
-            font-family: 'Times New Roman', Times, serif
-        }
-
-        .caja .card-text {
-            font-size: 1.05rem;
-            color: #444;
-            font-family: 'Roboto', sans-serif;
-            margin-bottom: 10px;
-            line-height: 1.5;
-            text-align: center;
-            }
-
-        @media (max-width: 992px) {
-            .container-profesionales {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 600px) {
-            .container-profesionales {
-                grid-template-columns: 1fr;
-            }
+        .caja img {
+            height: 250px !important;
         }
     </style>
     <script defer src="../js/main.js"> </script>
     <script>
         window.onload = async () => {
-            loadComponent('cabecera', 'cabecera.html');
+            loadComponent('header', 'cabecera.html');
             loadComponent('Footer', 'Footer.html');
             await cargar()
         }
@@ -57,9 +24,9 @@
 </head>
 
 <body>
-    <div>
-        <cabecera></cabecera>
-    </div>
+    <header>
+
+    </header>
 
     <div class="container mt-5">
         <h2 id="titulo-profesion" class="text-center mb-4">Profesionales</h2>

@@ -1,27 +1,31 @@
 /* style.css */
+
+*{
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
 body {
-  background-color: #2E3A59;
+  background-color: #D9EDFA;
   padding-top: 80px;
 }
 
 .caja p {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Poppins", sans-serif;
   font-size: 20px;
 }
 
 
 .container h2 {
-  border: 1px solid #d2c6c6;
-  /* Borde suave para las cajas */
+  border: 1px solid #dad7d7;
   border-radius: 30px;
-  /* Esquinas redondeadas */
   padding: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  /* Sombra sutil para un efecto 3D */
-  background-color: #e5dcdc;
-  /* Fondo blanco */
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: 50px;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); */
+  background-color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 35px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #182760;
 }
 
 .cajas-flex {
@@ -35,28 +39,26 @@ body {
 
 .caja {
   background-color: #e5dcdc;
-  border: 1px solid #b3afaf;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  padding: 15px;
-  min-height: 420px;
-  /* hace que todas tengan al menos esta altura */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  /* esto alinea bien texto e imagen */
-  transition: transform 0.2s ease;
+    text-align: center;
+    padding: 15px;
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease;
+    padding: 30px;
+    margin: 30px;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.2);
 }
 
 .caja img {
   width: 100%;
-  height: 230px;
-  object-fit: contain;
-  background-color: #fff;
-  /* o el color de tu tarjeta */
-  display: block;
   margin: 0 auto;
+  height: 146px;
+  object-fit: cover;
+  border-radius: 24px;
 }
 
 .caja:hover {
@@ -65,10 +67,11 @@ body {
 }
 
 h3 {
-  color: #000000;
-  /* Color para los títulos de las cajas */
-  margin-bottom: 10px;
-  /* Espacio debajo del título */
+    font-weight: bold;
+    color: #182760;
+    font-family: "Poppins", sans-serif;
+    font-size: 22px;
+    padding-top: 5%;
 }
 
 .caja p {
@@ -86,3 +89,39 @@ h3 {
   }
 
 }
+
+.container-profesionales {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* 3 tarjetas por fila */
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .caja .card-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #060607;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .caja .card-text {
+            font-size: 1.05rem;
+            color: #444;
+            margin-bottom: 10px;
+            line-height: 1.5;
+            text-align: center;
+            }
+
+        @media (max-width: 992px) {
+            .container-profesionales {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container-profesionales {
+                grid-template-columns: 1fr;
+            }
+        }
