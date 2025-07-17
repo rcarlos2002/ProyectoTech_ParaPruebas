@@ -26,6 +26,7 @@
 
 * {
     box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
 .logo2 {
@@ -39,13 +40,124 @@ html {
 body {
     margin: 0px;
     font-family: serif;
-    padding-top: 85px;
+    padding-top: 100px;
 }
 
-h3 {
-    font-size: 1.5em;
-    font-family:'Times New Roman', Times, serif
+
+
+ul.menu li {
+    display: inline-flex;
 }
+
+
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.poppins-black {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.poppins-thin-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.poppins-extralight-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.poppins-light-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-medium-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poppins-semibold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.poppins-bold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.poppins-extrabold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.poppins-black-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
 
 ul {
     list-style: none;
@@ -64,38 +176,40 @@ li {
 }
 
 button:hover {
-    background-color: aqua;
+    /*background-color: aqua;*/
     color: black;
 }
 
 .container {
     max-width: 1400px;
     margin: auto;
-    
 }
 
 .color-acento {
     color: blueviolet;
 }
 
+/* header */
+
 header {
     position: fixed;
     top: 0;
     width: 100%;
+    height: 100px;
     z-index: 1000;
     background-color: rgb(255, 255, 255);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
-    
 }
 
-
-header .Logo {
+header .Logo2 {
     margin: 0;
-    padding: 30px 30px;
+    padding: 5px;
     font-weight: bold;
-    color: rgb(0, 0, 0);
-    font-size: 3em;
+}
+
+header .Logo2 img{
+    max-width: 30%;
+    width: 360px;
 }
 
 header .container {
@@ -103,30 +217,51 @@ header .container {
     flex-direction: column;
     align-items: center;
     
-    
 }
+
+.menu-mobile{
+    display: none;
+}
+
+/*header nav {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 25px;
+}*/
 
 header nav {
-    display: flex;
-  flex-direction: row;
-  gap: 30px;
-  white-space: nowrap; /* ✅ No permite que el texto se parta */
-  flex-wrap: nowrap; 
+    padding: 25px 0;
 }
 
 
-header a {
+.menu a {
     padding: 5px 12px;
     text-decoration: none;
     font-weight: bold;
     color: black;
-    white-space: nowrap;  /* ✅ Mantiene el texto en una sola línea */
-  font-weight: bold;
+    font-size: 15px;
 }
 
-header a:hover {
-    color: blueviolet !important;
+.menu a:hover {
+    color: #2192E0 !important;
     cursor: pointer;
+}
+
+
+/* Botones */
+
+a.btn-primary {
+    border-radius: 30px;
+    color: white !important;
+    padding: 10px 20px;
+    border: 2px solid #2192E0 !important;
+    background-color: #2192E0;
+}
+
+a.btn-primary:hover {
+    background-color: white;
+    color: #2192E0;
 }
 
 #hero h1 {
@@ -134,7 +269,35 @@ header a:hover {
     color: aliceblue;
 }
 
-#hero {
+.btn{
+    font-size: 13px;
+    border-radius: 30px;
+}
+
+a.btn-second{
+    border: 2px solid;
+    color: #182760;
+    font-weight: bold;
+}
+
+a.btn-second:hover{
+    background-color: #182760;
+    border: 2px solid #182760;
+    color: white;
+}
+
+a.btn-second.blanco{
+    color: white !important;
+}
+
+a.btn-second.blanco:hover{
+    color: #182760 !important;
+    background-color: white !important;
+    border: 2px solid white !important;
+}
+
+
+/*#hero {
 
     text-align: center;
     padding: 200px 12px;
@@ -150,30 +313,43 @@ header a:hover {
 
 #hero, #Somospro{
     background-color: #2E3A59;
+}*/
+
+.slide h2{
+    font-weight: bold;
+    text-shadow: 0 0 black;
+}
+
+.carousel-caption {
+    bottom: 8.25rem;
+}
+
+.parrafo{
+    font-size: 15px;
+}
+
+h2.titulo {
+    font-size: 35px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #182760;
 }
 
 #Somospro .container {
     text-align: justify;
     line-height: 1.5;
-    padding: 200px 200px;
-    color: white;   
+    padding: 5%; 
     font-size: 20px;
 }
 
 #nuestras-profesiones {
-    background-color: rgb(115, 181, 177);
-    color: rgb(26, 35, 51);
+    background-color: #D9EDFA;
     text-align: center;
 
 }
 
 #nuestras-profesiones .container {
-    padding: 200px 12px
-}
-
-#nuestras-profesiones h2 {
-    margin-top: 0;
-    font-size: medium;
+    padding: 5%
 }
 
 #nuestras-profesiones p {
@@ -181,54 +357,36 @@ header a:hover {
 }
 
 #nuestras-profesiones .carta {
-    background-position: center center;
-    background-size: cover;
     padding: 50px 0px;
     margin: 30px;
     border-radius: 15px;
+    text-align: left;
+}
+
+.carta img {
+    width: 278px;
+    height: 146px;
+    object-fit: cover;
+    border-radius: 24px;
+}
+.carta h3{
+    font-weight: bold;
+    color:#182760;
+    font-family: "Poppins", sans-serif;
+    font-size: 22px;
+    padding-top: 5%;
 }
 
 
-#Caracteristicas {
-  padding: 80px 20px;
-  background-color: #ffffff;
-  text-align: center;
+#Caracteristicas .container {
+    padding: 5%;
+    text-align: center;
 }
 
-#Caracteristicas h2 {
-  color: #1c2350;
-  font-size: 2.5rem;
-  margin-bottom: 60px;
-  font-weight: 800;
+#Caracteristicas p{
+    font-weight: bold;
+    padding-top: 10px;
 }
-
-.caracteristicas-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 50px;
-  justify-items: center;
-  align-items: center;
-}
-
-.caracteristica-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.caracteristica-item img {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-  margin-bottom: 15px;
-}
-
-.caracteristica-item p {
-  font-weight: bold;
-  font-size: 1rem;
-  color: #1c1c1c;
-}
-
 
 
 
@@ -238,7 +396,9 @@ header a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: rgb(30, 30, 30);
+    background-image:url(../Imagenes/bg-contacto.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     color: rgb(255, 255, 255);
     height: auto;
     padding: 120px 20px;
@@ -263,7 +423,15 @@ footer .container {
 
 }
 
+@media (max-width: 460px) {
+    .menu-mobile{
+        display: block !important;
+    }
 
+    .menu-desktop{
+        display: none !important;
+    }
+}
 
 @media (min-width: 720px) {
 
@@ -272,23 +440,23 @@ footer .container {
         justify-content: space-between;
     }
 
-    header nav {
+    /*header nav {
         flex-direction: row;
         padding-bottom: 0;
         padding-right: 30px;
-    }
+    }*/
 
     #hero h1 {
         font-size: 5em;
     }
 
-    #Somospro .container {
+    /*#Somospro .container {
         display: flex;
         justify-content: space-evenly;
     }
 
     #Somospro .texto {
-        width: 50%;
+        idth: 50%;
         max-width: 600px;
         text-align: initial;
         padding-left: 30px;
@@ -296,17 +464,22 @@ footer .container {
         flex-direction: column;
         justify-content: center;
     }
+        */
 
     #Somospro h2 {
         margin-top: 0px;
     }
 
+    #Somospro .texto {
+        padding: 10px;
+    }
+
     #Somospro .img-container {
-        background-image: url("../Imagenes/uni2.jpg");
+        background-image: url("../Imagenes/somos-uni2.jpg");
         background-size: cover;
         background-position: center center;
-        height: 400px;
-        width: 600px;
+        height: 280px;
+        width: 100%;
         border-radius: 10px;
     }
 
@@ -319,8 +492,6 @@ footer .container {
     #nuestras-profesiones p {
         display: block;
         margin-bottom: 30px;
-        line-height: 1.6;
-        text-align: justify;
     }
 
     #nuestras-profesiones button {
@@ -328,30 +499,22 @@ footer .container {
         align-self: center;
     }
 
-    #nuestras-profesiones h2 {
-        font-size: 6em;
-    }
-
-    #nuestras-profesiones h3 {
-        margin-top: 0;
-    }
-
     #nuestras-profesiones .carta {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        /* justify-content: space-between;
         align-items: center;
         text-align: center;
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
         width: 350px;
-        height: 600px;
+        height: 600px;*/
         padding: 30px;
         margin: 30px;
         border-radius: 15px;
-        background-color: #e5dcdc;
-        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        background-color: white;
+        box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.2);
     }
 
     footer .container {

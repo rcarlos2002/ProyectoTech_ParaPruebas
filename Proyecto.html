@@ -1,166 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProyectoTech</title>
-    <script
-      src="https://kit.fontawesome.com/058b4c6e59.js"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="/css/Proyecto.css" />
-    <script defer src="js/main.js"></script>
+    <script src="https://kit.fontawesome.com/058b4c6e59.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/Proyecto.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script defer src ="js/main.js"> </script>
     <script>
-      window.onload = () => {
-        loadComponent("cabecera", "template/cabecera.html");
-        loadComponent("Footer", "template/Footer.html");
+        window.onload = () => { 
+            loadComponent('header', 'template/cabecera.html');
+            loadComponent('Footer', 'template/Footer.html');
 
         const usuarioGuardado = localStorage.getItem("usuario");
 
         if (usuarioGuardado) {
-          const usuario = JSON.parse(usuarioGuardado);
-          const saludo = document.getElementById("saludo");
-          if (saludo) {
-            saludo.textContent = `👋 Hola, ${usuario.nombre}`;
-          } else {
-            console.error("No se encontró el elemento #saludo");
-          }
-          document.getElementById(
-            "saludo"
-          ).textContent = `👋 Hola, ${usuario.nombre}`;
+            const usuario = JSON.parse(usuarioGuardado);
+            const saludo = document.getElementById("saludo");
+            if (saludo) {
+                saludo.textContent = `👋 Hola, ${usuario.nombre}`;
+            }else {
+                console.error("No se encontró el elemento #saludo")
+            }
+            document.getElementById("saludo").textContent = `👋 Hola, ${usuario.nombre}`;
         } else {
-          console.warn("No hay usuario guardado en localStorage");
+            console.warn("No hay usuario guardado en localStorage");
         }
-      };
-    </script>
-  </head>
-  <body>
-    <div>
-      <cabecera></cabecera>
-    </div>
+        }
 
-    <section id="hero">
-      <div class="container">
-        <p id="saludo" class="fs-4 mt-3"></p>
-        <h1>
-          Contacta con nuestros <br />
-          profesionales
-        </h1>
-      </div>
+    </script>
+</head>
+<body>
+    <header>
+
+    </header>
+    <!--<div>
+        <cabecera></cabecera>
+        
+    </div>-->
+
+    <section id="hero"> 
+
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="/Imagenes/img-banner-1.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h2>Encuentra el talento joven que necesita</h2>
+                <p>Descubre una red de jóvenes profesionales listos para trabajar contigo, contáctalos fácilmente.</p>
+                <a href="/template/loginyregister.html" class="btn btn-second btn-lg blanco">Busca un profesional ahora</a>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="/Imagenes/img-banner-1.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h2>Impulsa tu carrera desde hoy</h2>
+                <p>Crea tu perfil, muestra lo que sabes hacer y empieza a conectar con quienes necesitan tu talento.</p>
+                <a href="/template/loginyregister.html" class="btn btn-second btn-lg blanco">Crea tu perfil gratis</a>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="/Imagenes/img-banner-1.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h2>Haz que te encuentren, haz que te elijan</h2>
+                <p>Tu formación y habilidades merecen visibilidad. Publica tus servicios y permite que personas te encuentren y te contacten.</p>
+                <a href="/template/loginyregister.html" class="btn btn-second btn-lg blanco">Busca un profesional ahora</a>
+            </div>
+        </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+        <!--<div class="container">
+            <p id="saludo" class="fs-4 mt-3"></p>
+            <h1>Contacta con nuestros <br> profesionales</h1>
+            <a href="/template/loginyregister.html" class="btn btn-primary btn-lg">Registrate</a>
+        </div>-->
     </section>
 
     <section id="Somospro">
-      <div class="container">
-        <div class="img-container"></div>
-        <div class="texto">
-          <h2>Somos <span class="color-acento">Uni-2</span></h2>
-          <p>
-            sitio web, enfocado en fomentar la empleabilidad de estudiantes
-            recién graduados, o con emprendimientos donde pondran sus talentos
-            profesionales o estudios en algún ámbito que puedan prestar un
-            servicio.
-          </p>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-5">
+                    <div class="img-container"></div>
+                </div>
+            
+            
+                <div class="col-12 col-md-12 col-lg-7">
+                    <div class="texto">
+                        <h2 class="titulo">Somos Uni-2</h2>
+                        <p class="parrafo">Nos enfocamos en fomentar la empleabilidad de estudiantes recién graduados o con emprendimientos donde pondrán talentos profesionales o estudios en algún ámbito que puedan prestar un servicio.</p>
+                        <a href="/template/Profesiones.html" class="btn btn-second btn-lg">Conoce nuestras profesiones</a>
+                </div>
+            </div>
+            </div>
+            
         </div>
-      </div>
     </section>
 
     <section id="nuestras-profesiones">
-      <div class="container">
-        <h2>Algunas de Nuestras Profesiones</h2>
-        <div class="programas">
-          <div class="carta">
-            <h3>Enfermeria</h3>
-            <img src="Imagenes/enfermeria.jpg" alt="" width="110%" />
-            <p>
-              Profesionales capacitados en el cuidado integral de pacientes,
-              brindando atención médica básica, acompañamiento en tratamientos y
-              apoyo en el bienestar físico y emocional.
-            </p>
-            <a
-              href="../template/profesion.html?id=enfermeria"
-              class="btn btn-primary btn-lg"
-              >Ver mas</a
-            >
-          </div>
+        <div class="container">
+            <div class="col-12">
+                <h2 class="titulo">Nuestras Profesiones</h2>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-4">
+                    <div class="carta">
+                        <img src="Imagenes/enfermeria.jpg" alt="" width="100%">
+                        <h3>Enfermeria</h3>
+                        <p class="parrafo">Atención básica y especializada, cuidado de pacientes, toma de signos vitales y acompañamiento profesional con calidad humana.</p>
+                        <a href="../template/profesion.html?id=enfermeria" class="btn btn-second btn-lg">Ver mas</a>
+                    </div>
+                </div>
 
-          <div class="carta">
-            <h3>Medico General</h3>
-            <img src="Imagenes/medico-general.avif" alt="" width="110%" />
-            <p>
-              Especialistas en el diagnóstico, tratamiento y prevención de
-              enfermedades comunes.
-            </p>
-            <a
-              href="../template/profesion.html?id=MedicoGeneral"
-              class="btn btn-primary btn-lg"
-              >Ver mas</a
-            >
-          </div>
+                <div class="col-12 col-md-12 col-lg-4">
+                    <div class="carta">
+                        <img src="Imagenes/medico-general.avif" alt="" width="100%">
+                        <h3>Medico General</h3>
+                        <p class="parrafo">Valoración integral, diagnóstico inicial y orientación médica confiable para el bienestar físico y emocional del paciente.</p>
+                        <a href="../template/profesion.html?id=MedicoGeneral" class="btn btn-second btn-lg">Ver mas</a>
+                    </div>
+                </div>
 
-          <div class="carta">
-            <h3>Masajista</h3>
-            <img src="Imagenes/masagista.jpeg" alt="" width="110%" />
-            <p>
-              Expertos en técnicas de relajación, recuperación muscular y alivio
-              del estrés. Ofrecen servicios de masajes terapéuticos, deportivos
-              y de bienestar.
-            </p>
-            <a
-              href="../template/profesion.html?id=Masajista"
-              class="btn btn-primary btn-lg"
-              >Ver mas</a
-            >
-          </div>
+                <div class="col-12 col-md-12 col-lg-4">
+                    <div class="carta">
+                        <img src="Imagenes/categoria-masajista.jpg" alt="" width="100%">
+                        <h3>Masajista</h3>
+                        <p class="parrafo">Terapias relajantes o estéticas. Bienestar corporal con técnicas profesionales adaptadas a cada persona.</p>
+                        <a href="../template/profesion.html?id=Masagista" class="btn btn-second btn-lg">Ver mas</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="boton2">
+                        <a href="template/Profesiones.html" class="btn btn-primary btn-lg px-5 py-3">Todas nuestras profesiones</a>
+                        <a href="/template/AddUser.html" class="btn btn-primary btn-lg px-5 py-3">Crea tu propio perfil profesional</a>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="boton2">
-          <a
-            href="/template/AddUser.html"
-            class="btn btn-primary btn-lg px-5 py-3"
-            >Crea tu propio perfil profesional</a
-          >
-        </div>
-      </div>
     </section>
 
-    <section id="Caracteristicas">
-      <div class="container">
-        <h2>NUESTRAS CARACTERÍSTICAS</h2>
-        <div class="caracteristicas-grid">
-          <div class="caracteristica-item">
-            <img src="Imagenes/Contacto.png" alt="Contacto Online" />
-            <p><strong>Contacto Online</strong></p>
-          </div>
+        <Section id="Caracteristicas">
+            <div class="container">
+                <h2 class="titulo">Caracteristicas</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-md-12 col-lg-4">
+                            <div class="caracteristica text-center">
+                                <img src="Imagenes/contacto-online.png" alt="Contacto Online">
+                                <p class="parrafo">Contacto Online</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-4">
+                            <div class="caracteristica text-center">
+                                <img src="Imagenes/flexibilidad.png" alt="Contacto Online">
+                                <p class="parrafo">Contacto Online</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-4">
+                            <div class="caracteristica text-center">
+                                <img src="Imagenes/confiabilidad.png" alt="Contacto Online">
+                                <p class="parrafo">Contacto Online</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </Section>
 
-          <div class="caracteristica-item">
-            <img src="Imagenes/Flexibilidad.png" alt="Flexibilidad de horarios" />
-            <p><strong>Flexibilidad de horarios</strong></p>
-          </div>
-
-          <div class="caracteristica-item">
-            <img src="Imagenes/Confiabilidad.png" alt="100% Confiabilidad" />
-            <p><strong>100% Confiabilidad</strong></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="final">
-      <div class="container">
-        <h2>¿Listo para contratar?</h2>
-        <a href="/template/Profesiones.html" class="btn btn-primary btn-lg"
-          >Todas Nuestras Profesiones</a
-        >
-      </div>
-    </section>
+        <section id="final">
+            <div class="container">
+                <h2>¿Listo para contratar?</h2>
+                <a href="/template/Profesiones.html" class="btn btn-primary btn-lg">Contratanos!</a>
+            </div>
+        </section>
     <div>
-      <footer></footer>
+        <footer></footer>
     </div>
-  </body>
+</body>
+
 </html>
