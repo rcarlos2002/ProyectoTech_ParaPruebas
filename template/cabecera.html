@@ -1,33 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/Proyecto.css">
-    <script>
-</script>
-</head>
-<header>
-    <div class="container">
-        <a href="/Proyecto.html" style="font-size: 50px;"><em>Talento Joven!</em></a>
-        <p class="Logo2"><img src="../Imagenes/uni2.jpg" alt="Logo" width="30%"></p>
+<div class="container menu-desktop">
+    <div class="row">
+        <div class="col-6 col-md-6 col-lg-4">
+            <!--<a href="/Proyecto.html" style="font-size: 50px;"><em>Talento Joven!</em></a>-->
+            <p class="Logo2"><img src="../Imagenes/uni2.jpg" alt="Logo" width="30%"></p>
+        </div>
+        <div class="col-6 col-md-6 col-lg-8">
         <nav>
-            <a onclick="goToSection('Somospro')">Quienes Somos</a>
-            <a onclick="goToSection('nuestras-profesiones')">Nuestras Profesiones</a>
-            <a onclick="goToSection('Caracteristicas')">Caracteristicas</a>
-            <a href="/template/loginyregister.html">Unete a Nosotros</a>
-            <a href="/template/dashboard.html">Dashboard</a>
+            <ul class="menu">
+                <li><a onclick="goToSection('Somospro')">Quiénes somos</a></li>
+                <li><a onclick="goToSection('nuestras-profesiones')">Nuestras Profesiones</a></li>
+                <li><a onclick="goToSection('Caracteristicas')">Nuestras caracteristicas</a></li>
+                <li><a href="/template/loginyregister.html" class="btn-primary btn btn-lg">Únete a nosotros</a></li>
+            </ul>
         </nav>
-        <div id="usuario-saludo" class="text-end mt-3"></div>
+        <!--<div id="usuario-saludo" class="text-end mt-3"></div>-->
+        </div>
     </div>
-</header>
-
-<body>
-
-</body>
-
-</html>
+    
+</div>
+<nav class="navbar bg-body-tertiary fixed-top menu-mobile">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img src="../Imagenes/uni2.jpg" alt="Logo" width="100"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <p class="Logo2"><img src="../Imagenes/uni2.jpg" alt="Logo" width="30%"></p>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" onclick="goToSection('Somospro')">Quiénes somos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" onclick="goToSection('nuestras-profesiones')">Nuestras Profesiones</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" onclick="goToSection('Caracteristicas')">Nuestras caracteristicas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn-primary btn btn-lg" href="/template/loginyregister.html">Únete a nosotros</a>
+          </li>
+        </ul>
+        <form class="d-flex mt-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar"/>
+          <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>

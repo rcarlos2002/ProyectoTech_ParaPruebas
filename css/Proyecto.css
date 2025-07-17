@@ -1,5 +1,10 @@
 /*SALUDO*/
 #saludo {
+    position: absolute;
+    z-index: 1;
+    left: 38%;
+    top: 10%;
+    /*transform: translateX(-50%);*/
     font-size: 2rem;
     font-weight: 700;
     color: #ffffff;
