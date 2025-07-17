@@ -1,0 +1,361 @@
+/*SALUDO*/
+#saludo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    backdrop-filter: blur(12px);
+    background: rgba(0, 123, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    border-radius: 25px;
+    padding: 15px 30px;
+    display: inline-block;
+    margin-top: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: riseFade 0.8s ease forwards;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    backdrop-filter: saturate(180%) blur(10px);
+    background-clip: padding-box;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+#saludo:hover {
+    background: rgba(0, 123, 255, 0.3);
+    transform: scale(1.03);
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+.logo2 {
+    text-align: center;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0px;
+    font-family: serif;
+    padding-top: 85px;
+}
+
+h3 {
+    font-size: 1.5em;
+    font-family:'Times New Roman', Times, serif
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    font-size: 1.25em;
+}
+
+.final-boton{
+    padding: 60px 300px;
+}
+
+.boton2 {
+    padding: 60px 300px;
+}
+
+button:hover {
+    background-color: aqua;
+    color: black;
+}
+
+.container {
+    max-width: 1400px;
+    margin: auto;
+    
+}
+
+.color-acento {
+    color: blueviolet;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    
+}
+
+
+header .Logo {
+    margin: 0;
+    padding: 30px 30px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    font-size: 3em;
+}
+
+header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+}
+
+header nav {
+    display: flex;
+  flex-direction: row;
+  gap: 30px;
+  white-space: nowrap; /* ✅ No permite que el texto se parta */
+  flex-wrap: nowrap; 
+}
+
+
+header a {
+    padding: 5px 12px;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    white-space: nowrap;  /* ✅ Mantiene el texto en una sola línea */
+  font-weight: bold;
+}
+
+header a:hover {
+    color: blueviolet !important;
+    cursor: pointer;
+}
+
+#hero h1 {
+    font-size: 5em;
+    color: aliceblue;
+}
+
+#hero {
+
+    text-align: center;
+    padding: 200px 12px;
+    height: 80vh;
+    color: rgb(0, 0, 0);
+    background-image: url("../Imagenes/manos.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+
+}
+
+#hero, #Somospro{
+    background-color: #2E3A59;
+}
+
+#Somospro .container {
+    text-align: justify;
+    line-height: 1.5;
+    padding: 200px 200px;
+    color: white;   
+    font-size: 20px;
+}
+
+#nuestras-profesiones {
+    background-color: rgb(115, 181, 177);
+    color: rgb(26, 35, 51);
+    text-align: center;
+
+}
+
+#nuestras-profesiones .container {
+    padding: 200px 12px
+}
+
+#nuestras-profesiones h2 {
+    margin-top: 0;
+    font-size: medium;
+}
+
+#nuestras-profesiones p {
+    display: block;
+}
+
+#nuestras-profesiones .carta {
+    background-position: center center;
+    background-size: cover;
+    padding: 50px 0px;
+    margin: 30px;
+    border-radius: 15px;
+}
+
+
+#Caracteristicas {
+  padding: 80px 20px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+#Caracteristicas h2 {
+  color: #1c2350;
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+  font-weight: 800;
+}
+
+.caracteristicas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 50px;
+  justify-items: center;
+  align-items: center;
+}
+
+.caracteristica-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.caracteristica-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.caracteristica-item p {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #1c1c1c;
+}
+
+
+
+
+#final {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(30, 30, 30);
+    color: rgb(255, 255, 255);
+    height: auto;
+    padding: 120px 20px;
+}
+
+footer {
+    background-color: rgb(230, 230, 230);
+    height: 10%;
+
+}
+
+footer p {
+    margin: 0;
+    padding: 12px;
+    color: rgb(100, 100, 100);
+}
+
+footer .container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+}
+
+
+
+@media (min-width: 720px) {
+
+    header .container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    header nav {
+        flex-direction: row;
+        padding-bottom: 0;
+        padding-right: 30px;
+    }
+
+    #hero h1 {
+        font-size: 5em;
+    }
+
+    #Somospro .container {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    #Somospro .texto {
+        width: 50%;
+        max-width: 600px;
+        text-align: initial;
+        padding-left: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #Somospro h2 {
+        margin-top: 0px;
+    }
+
+    #Somospro .img-container {
+        background-image: url("../Imagenes/uni2.jpg");
+        background-size: cover;
+        background-position: center center;
+        height: 400px;
+        width: 600px;
+        border-radius: 10px;
+    }
+
+    #nuestras-profesiones .programas {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    #nuestras-profesiones p {
+        display: block;
+        margin-bottom: 30px;
+        line-height: 1.6;
+        text-align: justify;
+    }
+
+    #nuestras-profesiones button {
+        margin-top: auto;
+        align-self: center;
+    }
+
+    #nuestras-profesiones h2 {
+        font-size: 6em;
+    }
+
+    #nuestras-profesiones h3 {
+        margin-top: 0;
+    }
+
+    #nuestras-profesiones .carta {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        width: 350px;
+        height: 600px;
+        padding: 30px;
+        margin: 30px;
+        border-radius: 15px;
+        background-color: #e5dcdc;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    footer .container {
+        justify-content: flex-end;
+    }
+
+}

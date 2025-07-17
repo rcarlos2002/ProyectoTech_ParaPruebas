@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/AddUser.css">
+  <script>
+    function displayProfilePic() {
+      const input = document.getElementById('foto');
+      const img = document.getElementById('profilePic');
+
+      if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          img.src = e.target.result;
+          img.style.display = 'block';
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("formulario-profesional");
+
+      form.addEventListener("submit", async function(e) {
+        e.preventDefault();
+
+        const nuevoProfesional = {
+            nombre: document.getElementById("nombre").value,
+            img: document.getElementById("profilePic").src,
+            celular: document.getElementById("celular").value,
+            email: document.getElementById("email").value,
+            descripcion: document.getElementById("descripcion").value,
+            profesionCateg: document.getElementById("profesion").value,
+            genero: document.getElementById("genero").value,
+            edad: parseInt(document.getElementById("edad").value)
+        };
+
+        try {
+          const response = await fetch("http://localhost:8000/registrar_Pro", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(nuevoProfesional)
+          });
+
+          if (response.ok) {
+            const data = await response.json();
+            alert("✅ Profesional agregado: " + data.nombre);
+            form.reset();
+            document.getElementById("profilePic").style.display = "none";
+          } else {
+            console.error("Error al agregar:", errorText);
+            alert("❌ Error al agregar el profesional");
+          }
+        } catch (error) {
+          console.error("Error al conectar con la API:", error);
+          alert("❌ No se pudo conectar con la API");
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+    <div class="form-container">
+        <form action="" id="formulario-profesional">
+            <div class="column-left">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" name="nombre" id="nombre" placeholder="Escribe tu Nombre" required>
+
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" placeholder="Escribe tu Correo" required>
+
+                <label for="contacto">Contacto:</label>
+                <input type="number" name="celular" id="celular" placeholder="Escribe tu numero de contacto" required>
+
+                <label for="profesion">Profesión:</label>
+                    <select id="profesion" name="profesion" required>
+                        <option value="">Selecciona una profesión</option>
+                        <option value="enfermeria">Enfermería</option>
+                        <option value="abogado">Abogado</option>
+                        <option value="MedicoGeneral">Medico General</option>
+                        <option value="Masajista">Masajista</option>
+                        <option value="ManicurePedicure">Manicure y Pedicure</option>
+                        <option value="Idiomas">Idiomas</option>
+                    </select>
+
+                <label for="genero">Genero:</label>
+                <select name="genero" id="genero" placeholder="Elige tu genero" required>
+                    <option value="femenino">Femenino</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="otro">Otro</option>
+                </select>
+                
+                <label for="edad">Edad</label>
+                <input type="number" name="edad" id="edad" placeholder="Escribe tu edad" required>
+
+                <label for="descripcion">Descripcion:</label>
+                <textarea name="descripcion" id="descripcion" rows="4" placeholder="Describe tu experiencia, habilidades, etc..." required></textarea>
+
+                <button type="submit">Enviar</button>
+           </div>
+
+           <div class="column-right">
+            <label for="foto">Foto de Perfil:</label>
+            <input type="file" name="foto" id="foto" onchange="displayProfilePic()" required>
+            <img src="#" alt="Foto de Perfil" style="display: none;" id="profilePic">
+           </div>
+        </form>
+    </div>
+</body>
+</html>

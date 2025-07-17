@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Profesionales</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(../Imagenes/paraiso.jpeg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .dashboard {
+            max-width: 1200px;
+            margin: auto;
+            font-size: 25px;
+        }
+
+        .top-cards {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            flex: 1;
+            min-width: 200px;
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .card .valor {
+            font-size: 36px;
+            font-weight: bold;
+            color: #111;
+        }
+
+        .graficas-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            gap: 30px;
+            justify-content: space-between;
+        }
+
+        .grafica-box {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            min-width: 500px;
+        }
+
+        canvas {
+            max-width: 100%;
+        }
+
+        select {
+            margin-bottom: 20px;
+            padding: 8px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard">
+        <h2 style="text-align:center; margin-bottom: 20px;">📊 Dashboard Uni-2 Talento Joven</h2>
+
+        <div class="filtro" style="text-align:center">
+            <label for="filtro">Selecciona una profesión:</label>
+            <select id="filtro"></select>
+        </div>
+
+        <div class="top-cards">
+            <div class="card">
+                <h3>Profesión</h3>
+                <div id="profesionNombre" class="valor">-</div>
+            </div>
+            <div class="card">
+                <h3>Cantidad de Profesionales</h3>
+                <div id="cantidadProfesionales" class="valor">-</div>
+            </div>
+        </div>
+
+        <div class="graficas-container">
+            <div class="grafica-box">
+                <h3 style="text-align:center;">Evolución</h3>
+                <canvas id="lineChart"></canvas>
+            </div>
+            <div class="grafica-box">
+                <h3 style="text-align:center;">Profesionales por Nombre</h3>
+                <canvas id="pieChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const filtro = document.getElementById('filtro');
+            const profesionNombre = document.getElementById('profesionNombre');
+            const cantidadProfesionales = document.getElementById('cantidadProfesionales');
+            const lineChartCanvas = document.getElementById('lineChart').getContext('2d');
+            const pieChartCanvas = document.getElementById('pieChart').getContext('2d');
+
+            const colores = ['#260d33', '#003f69', '#106b87', '#157a8c', '#b3aca4', '#f67f00', '#00bcd4', '#8bc34a'];
+
+            let lineChart, pieChart;
+
+            try {
+                const response = await fetch("http://localhost:8000/usuarios_Pro");
+                const data = await response.json();
+
+                // Agrupar por profesionCateg
+                const agrupado = {};
+                data.forEach(p => {
+                    const categoria = p.profesionCateg || "Sin Categoría";
+                    if (!agrupado[categoria]) agrupado[categoria] = [];
+                    agrupado[categoria].push(p);
+                });
+
+                // Llenar select con profesiones
+                Object.keys(agrupado).forEach(cat => {
+                    const option = document.createElement('option');
+                    option.value = cat;
+                    option.textContent = cat;
+                    filtro.appendChild(option);
+                });
+
+                filtro.addEventListener('change', () => {
+                    const categoria = filtro.value;
+                    const profesionales = agrupado[categoria] || [];
+
+                    profesionNombre.textContent = categoria;
+                    cantidadProfesionales.textContent = profesionales.length;
+
+                    const nombres = profesionales.map(p => p.nombre);
+                    const cantidades = profesionales.map(() => 1); // 1 por cada profesional
+
+                    const crecimiento = Array.from({ length: 12 }, () => Math.floor(Math.random() * 10 + 1)).reduce((acc, v, i) => {
+                        acc.push((acc[i - 1] || 0) + v);
+                        return acc;
+                    }, []);
+
+                    if (lineChart) lineChart.destroy();
+                    if (pieChart) pieChart.destroy();
+
+                    // Obtener profesiones y su cantidad total
+                    const profesiones = Object.keys(agrupado); // ["Médico", "Abogado", ...]
+                    const cantidadesPorProfesion = profesiones.map(prof => agrupado[prof].length); // [3, 5, 2, ...]
+
+                    lineChart = new Chart(lineChartCanvas, {
+                        type: 'bar',
+                        data: {
+                            labels: profesiones,
+                            datasets: [{
+                                label: 'Cantidad de profesionales por profesión',
+                                data: cantidadesPorProfesion,
+                                backgroundColor: colores,
+                                borderColor: 'rgba(100, 150, 50, 1)',
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            indexAxis: 'x', // Barras verticales
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    title: {
+                                        display: true,
+                                        text: 'Cantidad'
+                                    }
+                                },
+                                x: {
+                                    title: {
+                                        display: true,
+                                        text: 'Profesiones'
+                                    },
+                                    ticks: {
+                                        autoSkip: false,
+                                        maxRotation: 45,
+                                        minRotation: 45
+                                    }
+                                }
+                            },
+                            plugins: {
+                                legend: {
+                                    display: false
+                                },
+                                title: {
+                                    display: true,
+                                    text: 'Profesionales por Profesión'
+                                }
+                            }
+                        }
+                    });
+
+
+
+
+                    pieChart = new Chart(pieChartCanvas, {
+                        type: 'doughnut',
+                        data: {
+                            labels: nombres,
+                            datasets: [{
+                                data: cantidades,
+                                backgroundColor: colores,
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                legend: { position: 'bottom' }
+                            }
+                        }
+                    });
+                });
+
+                // Cargar primera categoría por defecto
+                filtro.selectedIndex = 0;
+                filtro.dispatchEvent(new Event('change'));
+
+            } catch (error) {
+                console.error("Error al cargar los datos:", error);
+                alert("❌ No se pudieron cargar los datos del servidor.");
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cajas Horizontales</title>
+    <script src="https://kit.fontawesome.com/058b4c6e59.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/Profesiones.css"/>
+    <script defer src ="../js/main.js"> </script>
+    <script>
+        window.onload = () => { 
+            loadComponent('cabecera','cabecera.html');
+            loadComponent('Footer','footer.html');
+        }
+    </script>
+  </head>
+  <body>
+    <div>
+      <cabecera></cabecera>
+    </div>
+    <div class="container mt-5">
+      <h2 class="text-center">Servicios</h2>
+      <br>
+      <hr>
+      <section class="cajas-flex">
+        <div class="caja">
+          <h3>Enfermería</h3>
+          <hr>
+          <img src="../Imagenes/enfermeria2.png" alt="Imagen de Enfermería" width="100%">
+          <hr>
+          <p>Obtendrás información de los profesionales en el siguiente link</p>
+          <a href="../template/profesion.html?id=enfermeria" class="btn btn-primary">Ver mas</a>
+        </div>
+        <div class="caja">
+          <h3>Medico General</h3>
+          <hr>
+          <img src="../Imagenes/MedicoGeneral.jpg" alt="Imagen Medico General" width="100%">
+          <hr>
+          <p>Obtendrás información de los profesionales en el siguiente link</p>
+          <a href="../template/profesion.html?id=MedicoGeneral" class="btn btn-primary">Ver mas</a>
+        </div>
+        <div class="caja">
+          <h3>Masajista</h3>
+          <hr>
+          <img src="../Imagenes/Masagista.jpg" alt="Imagen Medico General" width="84%">
+          <hr>
+          <p>Obtendrás información de los profesionales en el siguiente link</p>
+          <a href="../template/profesion.html?id=Masajista" class="btn btn-primary">Ver mas</a>
+        </div>
+      </section>
+    </div>
+    <div class="container mt-5">
+      <section class="cajas-flex">
+        <div class="caja">
+          <h3>Manicure y Pedicure</h3>
+          <hr>
+          <img src="../Imagenes/ManicurePedicure.jpg" alt="Imagen de Manicure y Pedicure" width="94%">
+          <hr>
+          <p>Obtendrás información de los profesionales en el siguiente link</p>
+          <a href="../template/profesion.html?id=ManicurePedicure" class="btn btn-primary">Ver mas</a>
+        </div>
+        <div class="caja">
+          <h3>Idiomas(Ingles)</h3>
+          <hr>
+          <img src="../Imagenes/Ingles.jpg" alt="Imagen Ingles" width="100%">
+          <hr>
+          <p>Obtendrás información de los profesionales en el siguiente link</p>
+          <a href="../template/profesion.html?id=Idiomas" class="btn btn-primary">Ver mas</a>
+        </div>
+        <div class="caja">
+          <h3>Abogado</h3>
+          <hr>
+          <img src="../Imagenes/Abogado.jpg" alt="Imagen Abogado" width="102%">
+          <hr>
+          <p>Obtendrás información de los profesionales en el siguiente link</p>
+          <a href="../template/profesion.html?id=Abogado" class="btn btn-primary">Ver mas</a>
+        </div>
+      </section>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+      crossorigin="anonymous"
+    ></script>
+    <div>
+        <footer></footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+/* style.css */
+body {
+  background-color: #2E3A59;
+  padding-top: 80px;
+}
+
+.caja p {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+}
+
+
+.container h2 {
+  border: 1px solid #d2c6c6;
+  /* Borde suave para las cajas */
+  border-radius: 30px;
+  /* Esquinas redondeadas */
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  /* Sombra sutil para un efecto 3D */
+  background-color: #e5dcdc;
+  /* Fondo blanco */
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 50px;
+}
+
+.cajas-flex {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* 3 columnas fijas */
+  gap: 30px;
+  /* Espacio entre las cajas */
+  padding: 20px;
+}
+
+.caja {
+  background-color: #e5dcdc;
+  border: 1px solid #b3afaf;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  padding: 15px;
+  min-height: 420px;
+  /* hace que todas tengan al menos esta altura */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* esto alinea bien texto e imagen */
+  transition: transform 0.2s ease;
+}
+
+.caja img {
+  width: 100%;
+  height: 230px;
+  object-fit: contain;
+  background-color: #fff;
+  /* o el color de tu tarjeta */
+  display: block;
+  margin: 0 auto;
+}
+
+.caja:hover {
+  transform: translateY(-5px);
+  /* Efecto suave al pasar el mouse */
+}
+
+h3 {
+  color: #000000;
+  /* Color para los títulos de las cajas */
+  margin-bottom: 10px;
+  /* Espacio debajo del título */
+}
+
+.caja p {
+  color: #000000;
+  /* Color para el texto del párrafo */
+  line-height: 1.6;
+  /* Altura de línea para mejor legibilidad */
+}
+
+/* Media Query para pantallas más pequeñas (opcional, Bootstrap ya ayuda con esto pero es un buen recordatorio) */
+@media (max-width: 768px) {
+  .caja {
+    max-width: 100%;
+    /* En pantallas pequeñas, cada caja ocupa todo el ancho */
+  }
+
+}

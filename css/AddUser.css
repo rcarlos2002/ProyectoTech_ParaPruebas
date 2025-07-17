@@ -1,0 +1,94 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(187, 187, 187);
+    margin: 0;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    background-image: url(../Imagenes/paraiso.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.form-container {
+    margin: 0 20px;
+}
+
+form {
+    background-color: rgb(51, 51, 51, 0.602);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 20px;
+    display: flex;
+}
+
+.column-left {
+    flex: 1;
+    padding-right: 50px;
+    padding-left: 20px;
+}
+
+.column-right {
+    flex: 1;
+    padding-left: 20px;
+    padding-right: 30px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 12px 20px;
+    border: #7a7575;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+button:hover {
+    background-color: #0b8205;
+}
+
+img {
+    max-width: 250px;
+    max-height: 250px;
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+textarea {
+    width: 400px;
+    height: 100px;
+    /* Aumenta la altura aquí */
+    padding: 10px;
+    border-radius: 10px;
+    resize: vertical;
+    /* Permite que el usuario lo estire hacia abajo */
+}

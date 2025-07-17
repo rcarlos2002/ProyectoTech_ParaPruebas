@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProyectoTech</title>
+    <script
+      src="https://kit.fontawesome.com/058b4c6e59.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/Proyecto.css" />
+    <script defer src="js/main.js"></script>
+    <script>
+      window.onload = () => {
+        loadComponent("cabecera", "template/cabecera.html");
+        loadComponent("Footer", "template/Footer.html");
+
+        const usuarioGuardado = localStorage.getItem("usuario");
+
+        if (usuarioGuardado) {
+          const usuario = JSON.parse(usuarioGuardado);
+          const saludo = document.getElementById("saludo");
+          if (saludo) {
+            saludo.textContent = `👋 Hola, ${usuario.nombre}`;
+          } else {
+            console.error("No se encontró el elemento #saludo");
+          }
+          document.getElementById(
+            "saludo"
+          ).textContent = `👋 Hola, ${usuario.nombre}`;
+        } else {
+          console.warn("No hay usuario guardado en localStorage");
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <div>
+      <cabecera></cabecera>
+    </div>
+
+    <section id="hero">
+      <div class="container">
+        <p id="saludo" class="fs-4 mt-3"></p>
+        <h1>
+          Contacta con nuestros <br />
+          profesionales
+        </h1>
+      </div>
+    </section>
+
+    <section id="Somospro">
+      <div class="container">
+        <div class="img-container"></div>
+        <div class="texto">
+          <h2>Somos <span class="color-acento">Uni-2</span></h2>
+          <p>
+            sitio web, enfocado en fomentar la empleabilidad de estudiantes
+            recién graduados, o con emprendimientos donde pondran sus talentos
+            profesionales o estudios en algún ámbito que puedan prestar un
+            servicio.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="nuestras-profesiones">
+      <div class="container">
+        <h2>Algunas de Nuestras Profesiones</h2>
+        <div class="programas">
+          <div class="carta">
+            <h3>Enfermeria</h3>
+            <img src="Imagenes/enfermeria.jpg" alt="" width="110%" />
+            <p>
+              Profesionales capacitados en el cuidado integral de pacientes,
+              brindando atención médica básica, acompañamiento en tratamientos y
+              apoyo en el bienestar físico y emocional.
+            </p>
+            <a
+              href="../template/profesion.html?id=enfermeria"
+              class="btn btn-primary btn-lg"
+              >Ver mas</a
+            >
+          </div>
+
+          <div class="carta">
+            <h3>Medico General</h3>
+            <img src="Imagenes/medico-general.avif" alt="" width="110%" />
+            <p>
+              Especialistas en el diagnóstico, tratamiento y prevención de
+              enfermedades comunes.
+            </p>
+            <a
+              href="../template/profesion.html?id=MedicoGeneral"
+              class="btn btn-primary btn-lg"
+              >Ver mas</a
+            >
+          </div>
+
+          <div class="carta">
+            <h3>Masajista</h3>
+            <img src="Imagenes/masagista.jpeg" alt="" width="110%" />
+            <p>
+              Expertos en técnicas de relajación, recuperación muscular y alivio
+              del estrés. Ofrecen servicios de masajes terapéuticos, deportivos
+              y de bienestar.
+            </p>
+            <a
+              href="../template/profesion.html?id=Masajista"
+              class="btn btn-primary btn-lg"
+              >Ver mas</a
+            >
+          </div>
+        </div>
+
+        <div class="boton2">
+          <a
+            href="/template/AddUser.html"
+            class="btn btn-primary btn-lg px-5 py-3"
+            >Crea tu propio perfil profesional</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section id="Caracteristicas">
+      <div class="container">
+        <h2>NUESTRAS CARACTERÍSTICAS</h2>
+        <div class="caracteristicas-grid">
+          <div class="caracteristica-item">
+            <img src="Imagenes/Contacto.png" alt="Contacto Online" />
+            <p><strong>Contacto Online</strong></p>
+          </div>
+
+          <div class="caracteristica-item">
+            <img src="Imagenes/Flexibilidad.png" alt="Flexibilidad de horarios" />
+            <p><strong>Flexibilidad de horarios</strong></p>
+          </div>
+
+          <div class="caracteristica-item">
+            <img src="Imagenes/Confiabilidad.png" alt="100% Confiabilidad" />
+            <p><strong>100% Confiabilidad</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="final">
+      <div class="container">
+        <h2>¿Listo para contratar?</h2>
+        <a href="/template/Profesiones.html" class="btn btn-primary btn-lg"
+          >Todas Nuestras Profesiones</a
+        >
+      </div>
+    </section>
+    <div>
+      <footer></footer>
+    </div>
+  </body>
+</html>
