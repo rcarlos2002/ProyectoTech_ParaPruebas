@@ -5,7 +5,7 @@
         "clave": "sdf"
     },
     "CarRog@gmail.com": {
-        "nombre": "Carlos Rofriguez",
+        "nombre": "Carlos Rodriguez",
         "correo": "CarRog@gmail.com",
         "clave": "1235"
     },
@@ -68,5 +68,15 @@
         "nombre": "Camila Pati\u00f1o",
         "correo": "Cami@correo.com",
         "clave": "12345"
+    },
+    "Talento@correo.com": {
+        "nombre": "TalentoTech",
+        "correo": "Talento@correo.com",
+        "clave": "789456"
+    },
+    "joseca@correo.com": {
+        "nombre": "jose fernando",
+        "correo": "joseca@correo.com",
+        "clave": "1234"
     }
 }
